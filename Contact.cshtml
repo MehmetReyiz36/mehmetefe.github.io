@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "İletişim";
+}
+<div class="fade-in">
+    <h2 class="content-slide">İletişim</h2>
+    <p class="content-slide" style="animation-delay: 0.3s;">
+        Bana ulaşmak için aşağıdaki formu doldurabilir veya e-posta gönderebilirsiniz:
+        <a href="mailto:efemehmet1166@gmail.com" class="text-decoration-none">efemehmet1166@gmail.com</a>
+    </p>
+    @if (ViewBag.Success != null)
+    {
+        <div class="alert alert-success content-slide" style="animation-delay: 0.6s;">
+            @ViewBag.Success
+        </div>
+    }
+    @if (ViewBag.Error != null)
+    {
+        <div class="alert alert-danger content-slide" style="animation-delay: 0.6s;">
+            @ViewBag.Error
+            <br />
+            <small>Lütfen Google Tablo paylaşım ayarlarını kontrol edin: personal-website-service-proje@kendisitem.iam.gserviceaccount.com ile Düzenleyici izni verin.</small>
+        </div>
+    }
+    <form asp-action="Contact" method="post" class="contact-form content-slide" style="animation-delay: 0.9s;">
+        <div class="mb-3">
+            <label for="email" class="form-label">Gmail Adresiniz</label>
+            <input type="email" class="form-control" id="email" name="email" required placeholder="ornek@gmail.com" />
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label">Mesajınız</label>
+            <textarea class="form-control" id="message" name="message" rows="5" required placeholder="Mesajınızı buraya yazın..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary glow-btn">Gönder</button>
+    </form>
+    <p class="content-slide" style="animation-delay: 1.2s;">
+        Not: Form verileriniz güvenli bir şekilde Google Tablo'ya kaydedilir.
+    </p>
+</div>
